@@ -7,7 +7,6 @@ import {
   Button,
   Modal,
   Descriptions,
-  Typography,
   message,
 } from 'antd';
 import { SearchOutlined, EyeOutlined } from '@ant-design/icons';
