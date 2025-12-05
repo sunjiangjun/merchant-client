@@ -17,7 +17,6 @@ import { formatDateTime, formatCurrency } from '@/utils/format';
 import { mockMerchantUsers, mockUserOrders, mockDelay, paginate } from '@/utils/mockData';
 
 const { Search } = Input;
-const { Title } = Typography;
 
 export const Users: React.FC = () => {
   const [loading, setLoading] = useState(false);

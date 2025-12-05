@@ -145,10 +145,6 @@ export const Points: React.FC = () => {
     },
   ];
 
-  const usedPercent = pointsInfo?.totalPoints
-    ? (pointsInfo.usedPoints / pointsInfo.totalPoints) * 100
-    : 0;
-
   return (
     <div>
       <Row gutter={[16, 16]}>

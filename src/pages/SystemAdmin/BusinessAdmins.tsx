@@ -67,7 +67,7 @@ export const BusinessAdmins: React.FC = () => {
         merchantDomain: 'test.yc365.com',
         permissions: values.permissions || [],
         createdAt: new Date().toISOString(),
-        status: 'active',
+        status: 'active' as const,
       };
       
       // 添加到数据源
@@ -107,7 +107,7 @@ export const BusinessAdmins: React.FC = () => {
     }
   };
 
-  const handleResetPassword = async (values: any) => {
+  const handleResetPassword = async (_values: any) => {
     if (!selectedAdmin) return;
     try {
       setLoading(true);
@@ -125,7 +125,7 @@ export const BusinessAdmins: React.FC = () => {
   };
 
   const handleToggleStatus = async (admin: BusinessAdmin) => {
-    const newStatus = admin.status === 'active' ? 'disabled' : 'active';
+    const newStatus: 'active' | 'disabled' = admin.status === 'active' ? 'disabled' : 'active';
     try {
       setLoading(true);
       await mockDelay(500);

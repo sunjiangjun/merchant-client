@@ -7,7 +7,6 @@ import {
   StarOutlined,
 } from '@ant-design/icons';
 import { useAuthStore } from '@/stores/authStore';
-import { formatCurrency } from '@/utils/format';
 
 const { Title } = Typography;
 

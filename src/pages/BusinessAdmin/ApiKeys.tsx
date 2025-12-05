@@ -17,7 +17,6 @@ import {
   PlusOutlined,
   DeleteOutlined,
   ReloadOutlined,
-  CopyOutlined,
   EyeOutlined,
   StopOutlined,
   CheckOutlined,
@@ -72,7 +71,7 @@ export const ApiKeys: React.FC = () => {
         name: values.name,
         createdAt: new Date().toISOString(),
         traffic: 0,
-        status: 'active',
+        status: 'active' as const,
       };
       
       setDataSource([...dataSource, newKey]);
@@ -124,7 +123,7 @@ export const ApiKeys: React.FC = () => {
   };
 
   const handleToggleStatus = async (apiKey: ApiKey) => {
-    const newStatus = apiKey.status === 'active' ? 'disabled' : 'active';
+    const newStatus: 'active' | 'disabled' = apiKey.status === 'active' ? 'disabled' : 'active';
     try {
       setLoading(true);
       await mockDelay(500);
@@ -155,11 +154,6 @@ export const ApiKeys: React.FC = () => {
     } catch (error: any) {
       message.error(error.message || '加载流量数据失败');
     }
-  };
-
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
-    message.success('已复制到剪贴板');
   };
 
   const columns: ColumnsType<ApiKey> = [

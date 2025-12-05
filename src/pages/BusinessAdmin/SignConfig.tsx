@@ -41,7 +41,7 @@ export const SignConfig: React.FC = () => {
     loadData();
   }, []);
 
-  const handleTest = async (url: string) => {
+  const handleTest = async (_url: string) => {
     try {
       await mockDelay(500);
       // 模拟测试成功

@@ -9,7 +9,6 @@ import {
   WalletOutlined,
   ApiOutlined,
   StarOutlined,
-  KeyOutlined,
   SafetyOutlined,
 } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';

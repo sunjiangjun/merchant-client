@@ -11,9 +11,7 @@ import type {
   PointsInfo,
   PointsAllocation,
 } from '@/types';
-
-// 生成随机ID
-const generateId = () => Math.random().toString(36).substring(2, 15);
+import { Permission } from '@/types';
 
 // 生成随机日期
 const randomDate = (daysAgo = 30) => {
@@ -28,25 +26,31 @@ export const mockBusinessAdmins: BusinessAdmin[] = [
     id: '1',
     account: 'business_admin_1',
     merchantDomain: 'test.yc365.com',
-    permissions: ['view_assets', 'view_users', 'manage_api_keys'],
+    permissions: [Permission.VIEW_ASSETS, Permission.VIEW_USERS, Permission.MANAGE_API_KEYS],
     createdAt: randomDate(90),
-    status: 'active',
+    status: 'active' as const,
   },
   {
     id: '2',
     account: 'business_admin_2',
     merchantDomain: 'test.yc365.com',
-    permissions: ['view_assets', 'view_users', 'manage_api_keys', 'view_points', 'allocate_points'],
+    permissions: [
+      Permission.VIEW_ASSETS,
+      Permission.VIEW_USERS,
+      Permission.MANAGE_API_KEYS,
+      Permission.VIEW_POINTS,
+      Permission.ALLOCATE_POINTS,
+    ],
     createdAt: randomDate(60),
-    status: 'active',
+    status: 'active' as const,
   },
   {
     id: '3',
     account: 'business_admin_3',
     merchantDomain: 'test.yc365.com',
-    permissions: ['configure_sign'],
+    permissions: [Permission.CONFIGURE_SIGN],
     createdAt: randomDate(30),
-    status: 'disabled',
+    status: 'disabled' as const,
   },
 ];
 

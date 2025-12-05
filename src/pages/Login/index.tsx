@@ -9,7 +9,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
 import { setToken } from '@/utils/auth';
-import { UserRole } from '@/types';
+import { UserRole, Permission } from '@/types';
 import type { LoginRequest } from '@/types';
 import './styles.css';
 
@@ -37,7 +37,14 @@ export const Login: React.FC = () => {
         role: values.role,
         permissions: values.role === UserRole.SYSTEM_ADMIN 
           ? []
-          : ['view_assets', 'view_users', 'manage_api_keys', 'view_points', 'allocate_points', 'configure_sign'],
+          : [
+              Permission.VIEW_ASSETS,
+              Permission.VIEW_USERS,
+              Permission.MANAGE_API_KEYS,
+              Permission.VIEW_POINTS,
+              Permission.ALLOCATE_POINTS,
+              Permission.CONFIGURE_SIGN,
+            ],
         createdAt: new Date().toISOString(),
         lastLoginAt: new Date().toISOString(),
       };
