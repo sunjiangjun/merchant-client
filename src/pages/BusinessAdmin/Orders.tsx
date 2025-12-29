@@ -12,7 +12,7 @@ import {
   Modal,
   Descriptions,
 } from 'antd';
-import { SearchOutlined, EyeOutlined, FilterOutlined } from '@ant-design/icons';
+import { EyeOutlined, FilterOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import type { UserOrder } from '@/types';
 import { formatDateTime, formatCurrency } from '@/utils/format';

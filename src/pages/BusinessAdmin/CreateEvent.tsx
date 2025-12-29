@@ -10,22 +10,11 @@ import {
   Space,
   Select,
 } from 'antd';
-import { SaveOutlined, CalendarOutlined } from '@ant-design/icons';
+import { SaveOutlined } from '@ant-design/icons';
 import { mockDelay } from '@/utils/mockData';
-import dayjs, { Dayjs } from 'dayjs';
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
-
-interface EventFormData {
-  name: string;
-  description: string;
-  type: string;
-  startTime: Dayjs;
-  endTime: Dayjs;
-  targetAmount?: number;
-  rewardPoints?: number;
-}
 
 export const CreateEvent: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -113,7 +102,10 @@ export const CreateEvent: React.FC = () => {
             min={0}
             precision={2}
             formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            parser={(value) => value!.replace(/\$\s?|(,*)/g, '')}
+            parser={(value) => {
+              const parsed = value?.replace(/\$\s?|(,*)/g, '') || '0';
+              return parseFloat(parsed) || 0;
+            }}
           />
         </Form.Item>
 

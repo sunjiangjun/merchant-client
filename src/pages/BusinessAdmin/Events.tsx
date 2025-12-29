@@ -128,7 +128,7 @@ export const Events: React.FC = () => {
     setSettleModalVisible(true);
   };
 
-  const handleSettleSubmit = async (values: any) => {
+  const handleSettleSubmit = async (_values: any) => {
     if (!selectedEvent) return;
     try {
       setLoading(true);
