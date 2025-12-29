@@ -10,6 +10,10 @@ import {
   ApiOutlined,
   StarOutlined,
   SafetyOutlined,
+  GlobalOutlined,
+  ShoppingOutlined,
+  CalendarOutlined,
+  PlusCircleOutlined,
 } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/stores/authStore';
@@ -42,6 +46,21 @@ export const MainLayout: React.FC = () => {
       icon: <WalletOutlined />,
       label: '资产管理',
     },
+    {
+      key: '/system-admin/sign-config',
+      icon: <SafetyOutlined />,
+      label: 'Sign服务配置',
+    },
+    {
+      key: '/system-admin/api-keys',
+      icon: <ApiOutlined />,
+      label: 'API Key管理',
+    },
+    {
+      key: '/system-admin/domain-config',
+      icon: <GlobalOutlined />,
+      label: '域名与回调地址',
+    },
   ];
 
   // 业务管理员菜单
@@ -50,11 +69,6 @@ export const MainLayout: React.FC = () => {
       key: '/business-admin/dashboard',
       icon: <DashboardOutlined />,
       label: '工作台',
-    },
-    {
-      key: '/business-admin/sign-config',
-      icon: <SafetyOutlined />,
-      label: 'Sign服务配置',
     },
     {
       key: '/business-admin/assets',
@@ -67,14 +81,24 @@ export const MainLayout: React.FC = () => {
       label: '用户管理',
     },
     {
-      key: '/business-admin/api-keys',
-      icon: <ApiOutlined />,
-      label: 'API Key管理',
+      key: '/business-admin/orders',
+      icon: <ShoppingOutlined />,
+      label: '订单管理',
     },
     {
       key: '/business-admin/points',
       icon: <StarOutlined />,
       label: '积分管理',
+    },
+    {
+      key: '/business-admin/create-event',
+      icon: <PlusCircleOutlined />,
+      label: '创建事件',
+    },
+    {
+      key: '/business-admin/events',
+      icon: <CalendarOutlined />,
+      label: '事件管理',
     },
   ];
 

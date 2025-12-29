@@ -9,12 +9,16 @@ import { Login } from '@/pages/Login';
 import { SystemAdminDashboard } from '@/pages/SystemAdmin/Dashboard';
 import { BusinessAdmins } from '@/pages/SystemAdmin/BusinessAdmins';
 import { Transactions } from '@/pages/SystemAdmin/Transactions';
+import { SignConfig } from '@/pages/SystemAdmin/SignConfig';
+import { ApiKeys } from '@/pages/SystemAdmin/ApiKeys';
+import { DomainConfig } from '@/pages/SystemAdmin/DomainConfig';
 import { BusinessAdminDashboard } from '@/pages/BusinessAdmin/Dashboard';
-import { SignConfig } from '@/pages/BusinessAdmin/SignConfig';
 import { Assets } from '@/pages/BusinessAdmin/Assets';
 import { Users } from '@/pages/BusinessAdmin/Users';
-import { ApiKeys } from '@/pages/BusinessAdmin/ApiKeys';
+import { Orders } from '@/pages/BusinessAdmin/Orders';
 import { Points } from '@/pages/BusinessAdmin/Points';
+import { CreateEvent } from '@/pages/BusinessAdmin/CreateEvent';
+import { Events } from '@/pages/BusinessAdmin/Events';
 import { UserRole } from '@/types';
 
 // 主题配置
@@ -73,6 +77,9 @@ function App() {
             <Route path="dashboard" element={<SystemAdminDashboard />} />
             <Route path="business-admins" element={<BusinessAdmins />} />
             <Route path="transactions" element={<Transactions />} />
+            <Route path="sign-config" element={<SignConfig />} />
+            <Route path="api-keys" element={<ApiKeys />} />
+            <Route path="domain-config" element={<DomainConfig />} />
           </Route>
 
           {/* 业务管理员路由 */}
@@ -85,11 +92,12 @@ function App() {
             }
           >
             <Route path="dashboard" element={<BusinessAdminDashboard />} />
-            <Route path="sign-config" element={<SignConfig />} />
             <Route path="assets" element={<Assets />} />
             <Route path="users" element={<Users />} />
-            <Route path="api-keys" element={<ApiKeys />} />
+            <Route path="orders" element={<Orders />} />
             <Route path="points" element={<Points />} />
+            <Route path="create-event" element={<CreateEvent />} />
+            <Route path="events" element={<Events />} />
           </Route>
 
           {/* 默认路由重定向 */}

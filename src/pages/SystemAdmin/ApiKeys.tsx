@@ -55,8 +55,8 @@ export const ApiKeys: React.FC = () => {
   }, []);
 
   const handleCreate = async (values: any) => {
-    if (dataSource.length >= 5) {
-      message.error('最多只能创建 5 个 API Key');
+    if (dataSource.length >= 1) {
+      message.error('最多只能创建 1 个 API Key');
       return;
     }
 
@@ -266,15 +266,15 @@ export const ApiKeys: React.FC = () => {
           type="primary"
           icon={<PlusOutlined />}
           onClick={() => setModalVisible(true)}
-          disabled={dataSource.length >= 5}
+          disabled={dataSource.length >= 1}
         >
-          创建 API Key ({dataSource.length}/5)
+          创建 API Key ({dataSource.length}/1)
         </Button>
       }
     >
       <div style={{ marginBottom: 16, padding: 12, background: '#f0f0f0', borderRadius: 4 }}>
         <p style={{ margin: 0, fontSize: 12, color: '#666' }}>
-          注意：一个商户最多可以创建 5 个 API Key。请妥善保管您的 API Key，不要泄露给他人。
+          注意：一个商户最多可以创建 1 个 API Key。请妥善保管您的 API Key，不要泄露给他人。
         </p>
       </div>
 
