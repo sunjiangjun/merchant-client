@@ -103,8 +103,7 @@ export const CreateEvent: React.FC = () => {
             precision={2}
             formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
             parser={(value) => {
-              const parsed = value?.replace(/\$\s?|(,*)/g, '') || '0';
-              return parseFloat(parsed) || 0;
+              return value?.replace(/\$\s?|(,*)/g, '') || '0';
             }}
           />
         </Form.Item>
